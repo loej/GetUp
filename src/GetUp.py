@@ -13,7 +13,7 @@ def countTime():
     # Input Values. Converts minutes and/or hours to seconds.
     y = float(x)
     i = float(z)
-
+    # Checks floats that are less than 0.
     if y < 0 or i < 0:
         print("Please enter a valid time.")
     hourTime = y * 3600
