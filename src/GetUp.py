@@ -1,25 +1,54 @@
-import threading
 import time
+import os
 
-# Welcome message
-regularTime = time.ctime()
-print("Hey! Nice to see you again, today's date is " + regularTime + ".")
+# Welcome message.
+print("Welcome to Get Up, today's date is: " + time.ctime() + ".")
+print("---------------------------------------------------------------------")
 
-# Main Function to count the amount of time to until you walk up again.
-def timer():
+# Converts time and adds total counts to prompt to get up.
+def countTime():
+    # 20 minutes in seconds.
+    twentyMinstoSecs = 1200
+
+    # Input Values. Converts minutes and/or hours to seconds.
     y = float(x)
-    if y > 0:
-        newTime= y*60.0
-        print("Time to take a break!")
-        time.sleep(newTime)
-        print("Good Job Come Back!")
-    elif y < 0:
-        print("Please enter a positive number.")
+    i = float(z)
 
-# Try function to get the time
+    if y < 0 or i < 0:
+        print("Please enter a valid time.")
+    hourTime = y * 3600
+    minuteTime = i * 60
+
+    # Total seconds added.
+    totalSeconds = hourTime + minuteTime
+
+    # Sets total counter for the while loop.
+    # Converts the seconds to the amount of times it will notify the user.
+    totalCount = (totalSeconds / twentyMinstoSecs)
+    totalCount = int(totalCount)
+
+    # If the workflow is less than 20 minutes it won't set a notification
+    if totalCount == 0:
+        print("Your Workflow is less than 20 minutes.")
+    elif not (totalCount < 0):
+        # Loops the amount of times a notification will prompt
+        print("Time to get to work!")
+        while totalCount != 0:
+            time.sleep(twentyMinstoSecs)
+            print("Time to take a break, Get Up!")
+            totalCount -= 1
+            if totalCount == 1:
+                print("One stretch to go!")
+    else:
+        print("Please enter a valid time.")
+
+
+# Input values from console, try function.
 try:
-    x = input("How long are you planning to work today? ")
+    print("Please input the time you're going to work today: ")
+    x = input("How many hours are you planning to work today? ")
+    z = input("How many minutes are you planning to work today? ")
 except ValueError:
-    print("Please enter a number.")
+    print("Value Error")
 finally:
-        timer()
+    countTime()
