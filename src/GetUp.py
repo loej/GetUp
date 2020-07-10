@@ -5,6 +5,7 @@ import os
 print("Welcome to Get Up, today's date is: " + time.ctime() + ".")
 print("---------------------------------------------------------------------")
 
+
 # Converts time and adds total counts to prompt to get up.
 def countTime():
     # 20 minutes in seconds.
@@ -43,12 +44,14 @@ def countTime():
         print("Please enter a valid time.")
 
 
-# Input values from console, try function.
-try:
-    print("Please input the time you're going to work today: ")
-    x = input("How many hours are you planning to work today? ")
-    z = input("How many minutes are you planning to work today? ")
-except ValueError:
-    print("Value Error")
-finally:
-    countTime()
+if __name__ == "__main__":
+
+    # Input values from console, try function.
+    try:
+        print("Please input the time you're going to work today: ")
+        x = input("How many hours are you planning to work today? ")
+        z = input("How many minutes are you planning to work today? ")
+    except ValueError:
+        print("Value Error")
+    finally:
+        countTime()
