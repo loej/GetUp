@@ -5,10 +5,15 @@ from flask import Flask, redirect, url_for, render_template
 # Imports Flask instance 
 app = Flask(__name__)
 
-# Defines how to access specific page 
+# Defines how to access scpecific page 
 # This is the route: the default domain.
 @app.route('/')
 def mainPage():
+    return redirect(url_for('getUpPage'))
+
+# GetUp route where the user selects the time. 
+@app.route('/getup')
+def getUpPage():
     # Renders file inside template/index.html
     return render_template('index.html')
 
@@ -17,11 +22,6 @@ def mainPage():
 @app.route('/<name>')
 def userInterface(name):
     return f'You better be: {name}'
-
-# GetUp route where the user selects the time. 
-@app.route('/getup')
-def getUpPage():
-    return f'<h1> Welcome to Get Up! </h1>'
 
 # Redirecting user to new page:
 # Is a user tries to access the /admin page it will redirect them to 
