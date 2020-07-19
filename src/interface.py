@@ -1,4 +1,5 @@
-from flask import Flask, redirect, url_for, render_template
+import time
+from flask import Flask, redirect, url_for, render_template, request
 # redirect and url_for allow the user to immediatley get redirected from a different url
 # render_template allows to render an html file
 
@@ -34,6 +35,7 @@ def userInterface(name):
 # /getup
 
 
+@app.route('/admin')
 def admin():
     # A redirect simply redirects the user to a new screen.
     # name=' ' allows to pass the admin NAME to print the function userInterface()
