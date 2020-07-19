@@ -9,16 +9,13 @@ print("---------------------------------------------------------------------")
 # Converts time and adds total counts to prompt to get up.
 def countTime():
     # 20 minutes in seconds.
-
     twentyMinstoSecs = 1200
 
     # Input Values. Converts minutes and/or hours to seconds.
     y = float(x)
-
     i = float(z)
     # Checks floats that are less than 0.
     if y < 0 or i < 0:
-
         print("Please enter a valid time.")
     hourTime = y * 3600
     minuteTime = i * 60
@@ -26,7 +23,7 @@ def countTime():
     # Total seconds added.
     totalSeconds = hourTime + minuteTime
 
-    # Sets total counter or the while loop.
+    # Sets total counter for the while loop.
     # Converts the seconds to the amount of times it will notify the user.
     totalCount = (totalSeconds / twentyMinstoSecs)
     totalCount = int(totalCount)
@@ -55,6 +52,6 @@ if __name__ == "__main__":
         x = input("How many hours are you planning to work today? ")
         z = input("How many minutes are you planning to work today? ")
     except ValueError:
-        print("Please enter a numerical value.")
+        print("Value Error")
     finally:
         countTime()
