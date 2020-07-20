@@ -1,0 +1,32 @@
+<!--GetUp, currently a test to render with flask-->
+<!-- Not usually going to change this template. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="eye.ico">
+    <title>{% block cont %}{% endblock %}</title>
+  </head>
+  <body>
+    <div>
+    <h1>GU</h1>
+    <h3>Designed simply. Just for you.</h3> 
+    <div>
+    <center>
+      <h2>How long are you going to work today..? </h2>
+      <h2>Hours: </h2> 
+      <h2>Minutes: </h2> 
+      <h2>{{cont}} </h2>
+    </center>
+    <!-- Writing code inside html file. -->
+    {% for i in range(1,10) %}
+
+        <p> printing for loop</p>
+
+    {% endfor %}
+    </div>
+    <div> 
+  </body>
+</html>

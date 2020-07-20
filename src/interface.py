@@ -17,10 +17,10 @@ def mainPage():
 # GetUp route where the user selects the time.
 
 
-@app.route('/getup')
+@app.route('/GetUp')
 def getUpPage():
     # Renders file inside template/index.html
-    return render_template('index.html')
+    return render_template('basic.html')
 
 # This is a new page that accepts any input inside the brackets
 # Out puts what the function recieves from the parameter in the URL.
@@ -28,19 +28,17 @@ def getUpPage():
 
 @app.route('/<name>')
 def userInterface(name):
-    return f'This page is for {name}'
+    return f'This page is for {name}s only.'
 
 # Redirecting user to new page:
 # Is a user tries to access the /admin page it will redirect them to
 # /getup
 
-
 @app.route('/admin')
 def admin():
     # A redirect simply redirects the user to a new screen.
     # name=' ' allows to pass the admin NAME to print the function userInterface()
-    return redirect(url_for('mainPage', name='ADMIN.'))
-
+    return redirect(url_for('userInterface', name='admin'))
 
 # Main function.
 if __name__ == "__main__":
