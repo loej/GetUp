@@ -5,8 +5,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Adding css sheet. -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="icon" href="eye.ico">
+    <!-- Adding eye icon . -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='eye.ico') }}">
     <title>{% block cont %}{% endblock %}</title>
   </head>
   <body>
